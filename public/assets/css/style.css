@@ -1,0 +1,441 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+:root {
+    --dark: #1d1d1f;
+    --accent: #fa3461;
+    --accent-red: #ff0035;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: 1210px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.header__container {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header__link {
+    transition: .3s ease-in-out;
+}
+
+.header__link:hover {
+    color: var(--accent-red);
+}
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.button {
+    padding: 17px 50px;
+    border: 1px solid rgba(29, 29, 31, 0.25);
+    color: var(--dark);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    transition: .3s ease-in-out;
+}
+
+.auth-button {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.button:hover {
+    border-color: transparent;
+    background-color: var(--accent-red);
+    color: #fff;
+}
+
+.auth-button {
+    border-color: transparent;
+}
+
+.auth-button:hover {
+    background-color: var(--accent-red);
+}
+
+.header__logo-content, .footer__logo-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.header__logo, .footer__logo {
+    width: 70px;
+    height: 70px;
+}
+
+.header__logo img, .footer__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer {
+    border-top: 1px solid rgba(29, 29, 31, 0.25);
+}
+
+.footer__container {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.banner__container {
+    padding: 50px 0;
+}
+
+.banner__slider .swiper {
+    height: 700px;
+}
+
+.banner-slider__container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner-slide__content {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.banner-slider__text {
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.slide__img {
+    height: 100%;
+    width: 100%;
+}
+
+.slide__img  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.banner__slider .swiper-scrollbar {
+    background-color: transparent;
+}
+
+.banner__slider .swiper-scrollbar-drag {
+    background-color: #fff;
+}
+
+.catalog__container {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.catalog__subtitle {
+    font-size: 16px;
+}
+
+.catalog__header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.catalog form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    width: 400px;
+    padding: 15px 30px;
+    outline: none;
+    border: 1px solid rgba(29, 29, 31, 0.25);
+    border-radius: 30px;
+    transition: .3s ease-in-out;
+}
+
+input::placeholder {
+    transition: .3s ease-in-out;
+}
+
+input:focus {
+    border-color: var(--accent-red);
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.catalog__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.catalog__content {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.catalog__name {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.catalog__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.catalog__price span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.catalog__button {
+    width: 100%;
+}
+
+.login {
+    height: 60vh;
+}
+
+.login__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.error {
+    position: absolute;
+    color: tomato;
+    background-color: #fff;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input.error_active {
+    border-color: tomato;
+}
+
+.input__div {
+    position: relative;
+}
+
+.admin__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.admin__container {
+    padding: 50px 20px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+}
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+.table td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+
+.admin__tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.admin__tables{
+    width: 100%;
+}
+
+.admin__tables div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+tbody tr td {
+    text-align: center;
+}
+
+.control .delete {
+    color: tomato;
+}
+
+.catalog__img {
+    height: 280px;
+    width: 100%;
+}
+
+button {
+    border: none;
+}
